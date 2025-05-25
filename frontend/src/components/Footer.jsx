@@ -3,6 +3,10 @@ import { assets } from '../assets/assets'
 import { NavLink } from 'react-router-dom'
 
 const Footer = () => {
+  const scrollToTop = () => {
+    window.scrollTo(0, 0)
+  }
+
   return (
     <div className='mx-4 md:mx-10'>
       {/* Footer Main Section */}
@@ -20,14 +24,14 @@ const Footer = () => {
         <div>
           <p className='text-xl font-medium mt-16 '>Company</p>
           <ul className='flex flex-col gap-2 text-gray-600'>
-           <NavLink to="/">
-                <li>HOME</li>
+           <NavLink to="/" onClick={scrollToTop}>
+                <li className='cursor-pointer'>HOME</li>
             </NavLink>
-            <NavLink to="/about">
-                <li>ABOUT</li>
+            <NavLink to="/about" onClick={scrollToTop}>
+                <li className='cursor-pointer'>ABOUT</li>
             </NavLink>
-            <NavLink to="/contact">
-                <li>CONTACT</li>
+            <NavLink to="/contact" onClick={scrollToTop}>
+                <li className='cursor-pointer'>CONTACT</li>
             </NavLink>
             <li>Privacy & Policy</li>
           </ul>
